@@ -11,12 +11,13 @@ class Tour extends Component {
   };
 
   render() {
-    const { city, img, name, info } = this.props.tour;
+    const { city, img, name, info, id } = this.props.tour;
+    const { rmvTour } = this.props;
     return (
       <article className="tour">
         <div className="img-container">
           <img src={img} alt="city tour" />
-          <span className="close-btn">
+          <span className="close-btn" onClick={() => rmvTour(id)}>
             <i className="fas fa-times"></i>
           </span>
         </div>
